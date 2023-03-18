@@ -5,7 +5,7 @@
 [![License: MIT](https://shields.io./badge/license-MIT-green)](https://github.com/xoopscube-themes/xcl-picocss-157/blob/main/LICENSE)
 ## ///// — XCL PicoCSS
 
-XCL Theme PicoCSS 1.5.7 : [https://github.com/xoopscube-themes/xcl-picocss-157](https://github.com/xoopscube-themes/xcl-picocss-157)
+XCL Theme PicoCSS 1.5.7 : [https://xoopscube-themes.github.io/xcl-picocss-157](https://xoopscube-themes.github.io/xcl-picocss-157)
 
 ![XCL Theme PicoCSS 157](https://repository-images.githubusercontent.com/615645137/cf12b8f2-df2c-49ed-88a7-5e77ab3c0488)
 
