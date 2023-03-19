@@ -17,7 +17,7 @@ Description | Theme built with [PicoCSS](https://github.com/picocss/pico)
 Render Engine | Smarty v2 and Smarty v3
 Version | 1.5.7
 Author | @gigamaster Nuno Luciano (XCL23)
-Copyright | 2022 Authors
+Copyright | 2023 Authors
 License | MIT
 
 

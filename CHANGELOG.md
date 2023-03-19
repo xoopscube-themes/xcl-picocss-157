@@ -10,6 +10,13 @@ All notable changes to XCL Theme PicoCSS will be documented in this file.
 
 Git Repository : Refer please to [ xcl-picocss-157 ](https://github.com/xoopscube-themes/xcl-picocss-157)
 
+## [XCL Pico 157 ] 2023-03-20
+
+- Accordion and Dropdown
+- Defer and Preload
+- Fixed user menu
+- Side Panel
+
 ## [XCL Pico 157 ] 2023-03-18
 
 - Alert admin in side panel

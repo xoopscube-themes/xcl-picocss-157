@@ -5,7 +5,7 @@
     * XCL Theme PicoCSS 157
     *
     * @version   1.5.7
-    * @date      2023-01-18
+    * @date      2023-03-20
     * @author    Nuno Luciano ( https://github.com/gigamaster )
     * @copyright (c) 2005-2023 The XOOPSCube Project, authors
     * @license   MIT
@@ -15,7 +15,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title><{$xoops_sitename}> - <{$xoops_pagetitle}></title>
     <meta name="description" content="<{$xoops_meta_description}>">
     <meta name="robots" content="<{$xoops_meta_robots}>">
@@ -49,38 +48,34 @@
     <!-- Resquesturi $xoops_requesturi : /module/dirname/id -->
     <link rel="canonical" href="<{$xoops_url}><{$SCRIPT_NAME}>">
 
-    <!-- Favicon SVG located in the root directory -->
+    <{* ----- Favicon SVG located in the root directory ----- *}>
     <link rel="icon" href="<{$xoops_url}>/favicon.svg" type="image/svg+xml">
-    <!-- Favicon.png root images' directory -->
-    <link rel="alternate icon" href="<{$xoops_url}>/images/favicon.png" type="image/png">
-    <!-- HTML5 valid Data URI for fake favicon requests by Browsers -->
-    <link rel="alternate icon" href="data:;base64,iVBORw0KGgo=">
+    <{* ----- Favicon.png root images' directory
+    <link rel="alternate icon" href="<{$xoops_url}>/images/favicon.png" type="image/png">  ----- *}>
+
     <!-- Resquesturi $xoops_requesturi : /module/dirname/id -->
 
     <!-- Mobile App Manifest -->
 <!--    <link rel="manifest" href="<{$xoops_imageurl}>site.webmanifest">-->
 
     <{* ----- CSS - Picocss ----- *}>
-    <link rel="stylesheet" href="<{$xoops_imageurl}>css/pico.min.css">
+    <link rel="preload" href="<{$xoops_imageurl}>css/pico.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<{$xoops_imageurl}>css/pico.min.css"></noscript>
     <{* ----- CSS - Theme ----- *}>
-    <link rel="stylesheet" href="<{$xoops_themecss}>">
+    <link rel="preload" href="<{$xoops_themecss}>" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="<{$xoops_themecss}>"></noscript>
 
-    <!-- Modules javascript
-    <script defer><{$xoops_js|regex_replace:"/(\/\/\-\->|<!\-\-)/":""}></script> -->
-    <{if $xoops_isuser}>
     <!-- RMV: added module header -->
     <{$xoops_module_header}>
     <!-- RMV: added block header -->
     <{$xoops_block_header}>
-    <!-- JavaScript -->
-    <{/if}>
+    <!-- Defer JavaScript -->
     <{* ----- Defer preload of custom styles for jQuery UI, PrismJS ----- *}>
     <link rel="preload" href="<{$xoops_imageurl}>css/jquery-ui.theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="<{$xoops_imageurl}>css/jquery-ui.theme.css"></noscript>
     <link rel="preload" href="<{$xoops_url}>/common/prismjs/prism.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="<{$xoops_url}>/common/prismjs/prism.css"></noscript>
 </head>
-
 <body class="<{$xoops_dirname}>">
 
 <{* Hero + Nav + User Menu *}>
@@ -235,13 +230,11 @@
 <{if $xoops_isadmin}>
 <{include file="$xoops_theme/component/admin-panel.html"}>
 <{/if}>
-
-<{* ---------- Common JavaScript *}>
+<{* ---------- DO NOT DEFER Theme Plugins - LocalStoarage & SVG ! *}>
 <script src="<{$xoops_url}>/common/js/x-utils.js"></script>
-<{* ---------- Theme Plugins *}>
 <script src="<{$xoops_imageurl}>js/plugins.js"></script>
-<script src="<{$xoops_imageurl}>js/minimal-theme-switcher.js"></script>
-<{* ----- PrismJS ----- *}>
-<script defer src="<{$xoops_url}>/common/prismjs/prism.js"></script>
+<{* ---------- PrismJS ----- *}>
+<script async src="<{$xoops_url}>/common/prismjs/prism.js"></script>
 </body>
 </html>
+
